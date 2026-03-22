@@ -1,0 +1,37 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Local env / secrets
+.env
+.env.*
+*.local
+*.secret
+*.key
+*.pem
+*.crt
+*.p12
+*.pfx
+secrets/
+
+# Runtime / logs / temp
+*.log
+tmp/
+temp/
+.cache/
+
+# OpenClaw local runtime state that should stay local
+.openclaw/sessions/
+.openclaw/logs/
+.openclaw/tmp/
+.openclaw/cache/
+.openclaw/*.db
+.openclaw/*.sqlite
+.openclaw/*.sqlite3
+
+# Memory scratch files
+memory/*.tmp
+memory/*.bak
