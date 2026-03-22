@@ -21,11 +21,55 @@ INCLUDE_PATHS=(
   "scripts/auto-backup.sh"
 )
 
+# Denylist: if any of these appear inside the whitelisted scope, abort backup.
+DENY_PATTERNS=(
+  ".env"
+  ".env.*"
+  "*.key"
+  "*.pem"
+  "*.p12"
+  "*.pfx"
+  "*.crt"
+  "*.secret"
+)
+
 cd "$REPO_DIR"
 
 if [ ! -d .git ]; then
   echo "Not a git repo: $REPO_DIR" >&2
   exit 1
+fi
+
+# Hard stop if sensitive files appear inside the whitelist scope.
+FOUND_DENY=()
+for path in "${INCLUDE_PATHS[@]}"; do
+  if [ -d "$path" ]; then
+    while IFS= read -r -d '' file; do
+      base="$(basename "$file")"
+      for pattern in "${DENY_PATTERNS[@]}"; do
+        if [[ "$base" == $pattern ]]; then
+          FOUND_DENY+=("$file")
+          break
+        fi
+      done
+    done < <(find "$path" -type f -print0)
+  elif [ -f "$path" ]; then
+    base="$(basename "$path")"
+    for pattern in "${DENY_PATTERNS[@]}"; do
+      if [[ "$base" == $pattern ]]; then
+        FOUND_DENY+=("$path")
+        break
+      fi
+    done
+  fi
+done
+
+if [ ${#FOUND_DENY[@]} -gt 0 ]; then
+  {
+    echo "ALERT: backup aborted because denylisted files were found in whitelisted paths:"
+    printf ' - %s\n' "${FOUND_DENY[@]}"
+  } >&2
+  exit 2
 fi
 
 # Reset index view first so only the whitelist participates in this backup run.
