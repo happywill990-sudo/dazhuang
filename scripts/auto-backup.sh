@@ -40,6 +40,24 @@ if [ ! -d .git ]; then
   exit 1
 fi
 
+log_alert_to_memory() {
+  local ts day memory_file
+  ts="$(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M:%S %Z')"
+  day="$(TZ=Asia/Shanghai date '+%Y-%m-%d')"
+  memory_file="$REPO_DIR/memory/${day}.md"
+
+  mkdir -p "$REPO_DIR/memory"
+
+  {
+    echo
+    echo "## Auto backup alert - ${ts}"
+    echo "- Status: aborted"
+    echo "- Reason: denylisted files found in whitelisted backup scope"
+    echo "- Files:"
+    printf '  - %s\n' "${FOUND_DENY[@]}"
+  } >> "$memory_file"
+}
+
 # Hard stop if sensitive files appear inside the whitelist scope.
 FOUND_DENY=()
 for path in "${INCLUDE_PATHS[@]}"; do
@@ -65,9 +83,11 @@ for path in "${INCLUDE_PATHS[@]}"; do
 done
 
 if [ ${#FOUND_DENY[@]} -gt 0 ]; then
+  log_alert_to_memory
   {
     echo "ALERT: backup aborted because denylisted files were found in whitelisted paths:"
     printf ' - %s\n' "${FOUND_DENY[@]}"
+    echo "Alert also written to: memory/$(TZ=Asia/Shanghai date '+%Y-%m-%d').md"
   } >&2
   exit 2
 fi
