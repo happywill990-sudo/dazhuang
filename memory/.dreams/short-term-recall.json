@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "updatedAt": "2026-05-10T06:57:11.271Z",
+  "entries": {
+    "memory:memory/2026-05-08.md:1:20": {
+      "key": "memory:memory/2026-05-08.md:1:20",
+      "path": "memory/2026-05-08.md",
+      "startLine": 1,
+      "endLine": 20,
+      "source": "memory",
+      "snippet": "# 2026-05-08 ## 三条实例卡顿调查 - 应 Will 要求调查三条（端口 19789，PID 524114）卡住原因 - **根因：** 三条在 20:38 自改配置，主模型切到 `mt/claude-opus-4-6`（mt 供应商 api.9cubic.cn/v1），但该供应商不可用（返回空响应/JSON 解析失败） - Gateway 经历热加载 → 飞书两个账号重启 → 恢复投递时因 open_id cross app 跨飞书应用而失败 - 后续模型调用全部因 mt 服务器无响应而卡死 - 向 Will 汇报了根因并给出修复方案（方案A：切回 compshare 或 deepseek 模型；方案B：远程改配置） - **状态：** 已汇报但 Will 尚未确认修复方案，待跟进 # 2026-05-08 ## 三条实例卡顿调查 - 应 Will 要求调查三条（端口 19789，PID 524114）卡住原因 - **根因：** 三条在 20:38 自改配置，主模型切到 `mt/claude-opus-4-6`（mt 供应商 api.9cubic.cn/v1），但该供应商不可用（返回空响应/JSON 解析失败） - Gateway 经历热加载 → 飞书两个账号重启 → 恢复投递时因 open_id cross app 跨飞书应用而失败 - 后续模型调用全部因 mt 服务器无响应而卡死 - 向 Will 汇报了根因并给出修复方案（方案A：切回 compshare 或 deepseek 模型；方案B：远程改配置） - **状态：** 已汇报但 Will 尚未确",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-10T06:57:11.271Z",
+      "lastRecalledAt": "2026-05-10T06:57:11.271Z",
+      "queryHashes": [
+        "27b2694645f2"
+      ],
+      "recallDays": [
+        "2026-05-10"
+      ],
+      "conceptTags": [
+        "gateway",
+        "mt/claude-opus-4-6",
+        "api.9cubic.cn/v1",
+        "返回空响应/json",
+        "open-id",
+        "三条",
+        "实例",
+        "调查"
+      ]
+    }
+  }
+}
