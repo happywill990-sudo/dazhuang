@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-10T06:57:11.271Z",
+  "updatedAt": "2026-05-13T04:55:31.913Z",
   "entries": {
     "memory:memory/2026-05-08.md:1:20": {
       "key": "memory:memory/2026-05-08.md:1:20",
@@ -31,6 +31,192 @@
         "三条",
         "实例",
         "调查"
+      ]
+    },
+    "memory:memory/2026-05-09.md:89:114": {
+      "key": "memory:memory/2026-05-09.md:89:114",
+      "path": "memory/2026-05-09.md",
+      "startLine": 89,
+      "endLine": 114,
+      "source": "memory",
+      "snippet": "- Liveness warnings on `channels.feishu.start-account` phase with event loop delays - WebSocket connection starts but may hang/be slow - Dashboard shows feishu channel as \"ON\" / \"OK\" / \"configured\" ### Next Actions Needed - Add contact permission scope on Feishu open platform - Clean up `models.defaultModel` from config - Consider changing `dmPolicy` to `open` for unpaired users ## SSE 解析错误关键发现 ### 问题 - 三条通过 feishu 报告：`Could not parse Anthropic SSE event message_stop: Unexpected non-whitespace character after JSON at position 308` - 来自三条调用 `mt/claude-opus-4-6`（端点 `api.9cubic.cn/v1`）时的运行时错误 ### 关键事实 - **原始 SSE 数据从未完整写入磁盘文件** — 是 JS 运行时的内存异常 - session/trajectory/checkpoint 文件中只存了截断后的 error",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-13T04:55:31.913Z",
+      "lastRecalledAt": "2026-05-13T04:55:31.913Z",
+      "queryHashes": [
+        "8c389099078e"
+      ],
+      "recallDays": [
+        "2026-05-13"
+      ],
+      "conceptTags": [
+        "channels.feishu.start-account",
+        "hang/be",
+        "models.defaultmodel",
+        "message-stop",
+        "non-whitespace",
+        "mt/claude-opus-4-6",
+        "api.9cubic.cn/v1",
+        "session/trajectory/checkpoint"
+      ]
+    },
+    "memory:memory/2026-05-09.md:128:146": {
+      "key": "memory:memory/2026-05-09.md:128:146",
+      "path": "memory/2026-05-09.md",
+      "startLine": 128,
+      "endLine": 146,
+      "source": "memory",
+      "snippet": "- 配置文件中的 `defaultModel` 字段在新版本下生效，不再触发 doctor 回滚 ### 18:26 - 三条模型切换成功确认 - **当前模型：** `sk-644…0fd9/deepseek-reasoner`（`agents.defaults.model.primary`） - 之前的 SSE 报错发生在模型切换 **之前**（当时还用的 `mt/claude-opus-4-6`，从 `api.9cubic.cn/v1` 获取） - 切换后三条开始用 deepseek-reasoner，不再走 mt 供应商，相关 SSE 问题不会复现 ### 信息修正 - 之前关于\"三条版本 v2026.3.13\"和\"模型切换被 doctor 回滚\"的分析不完全准确 - 实际流程：Will 可能自行升级了三条 → 模型切换的 config 修改在 v5.4 下正常工作 - 三条启动失败的日志（`defaultModel` 不支持）可能来自升级过程中的中间状态或旧版本的残余日志 ## 三条新的 SSE 报错（deepseek anthropic 兼容端点） ### 约 18:26 - 三条 feishu 回复失败 - **报错：** `Could not parse Anthropic SSE event message_start: Unexpected end of JSON input; data=; raw=event: message_start` - **来源：** `sk-644…0fd9/deepseek-reasoner` 模型调用 → 走的是 d",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-13T04:55:31.913Z",
+      "lastRecalledAt": "2026-05-13T04:55:31.913Z",
+      "queryHashes": [
+        "8c389099078e"
+      ],
+      "recallDays": [
+        "2026-05-13"
+      ],
+      "conceptTags": [
+        "sk-644",
+        "0fd9/deepseek-reasoner",
+        "agents.defaults.model.primary",
+        "mt/claude-opus-4-6",
+        "api.9cubic.cn/v1",
+        "deepseek-reasoner",
+        "v2026.3.13",
+        "v5.4"
+      ]
+    },
+    "memory:memory/2026-05-09.md:109:132": {
+      "key": "memory:memory/2026-05-09.md:109:132",
+      "path": "memory/2026-05-09.md",
+      "startLine": 109,
+      "endLine": 132,
+      "source": "memory",
+      "snippet": "1. `message_start`（含 usage/cache 字段） 2. `content_block_start`（index 0, text: \"\"） 3. `content_block_delta`（index 0, text: \"[[\"） - **根因：** `api.9cubic.cn/v1` 返回的 SSE 格式有问题，不应将多个事件合并到同一条 data 行 ### 相关文件（含截断版本） - `~/.openclaw-OCCoding/agents/main/sessions/03b49e2a-be71-4fca-9ffd-475095a08405/checkpoint.*.jsonl` — 三条转发的截断消息 - `~/.openclaw-OCCoding/agents/main/sessions/03b49e2a-be71-4fca-9ffd-475095a08405/trajectory.jsonl` — 大壮处理轨迹 - `journalctl --user -u openclaw-gateway-OCCoding.service` — systemd 日志含截断 stack ### 教训 - 不要再搜索\"完整 SSE 原始数据文件\" — 它不存在于磁盘 - 错误消息中 position 308 之后缺失的内容已知且可还原 ## 三条版本与模型更新确认 ### 18:26 - Will 确认三条已升级到 v5.4 - 在 WebChat 看到三条版本是 5.4（之前调查时误以为还是 v2026.3.13） - **三条实际版本：",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-13T04:55:31.913Z",
+      "lastRecalledAt": "2026-05-13T04:55:31.913Z",
+      "queryHashes": [
+        "8c389099078e"
+      ],
+      "recallDays": [
+        "2026-05-13"
+      ],
+      "conceptTags": [
+        "gateway",
+        "message-start",
+        "usage/cache",
+        "content-block-start",
+        "content-block-delta",
+        "api.9cubic.cn/v1",
+        "v5.4",
+        "5.4"
+      ]
+    },
+    "memory:memory/2026-05-09.md:144:160": {
+      "key": "memory:memory/2026-05-09.md:144:160",
+      "path": "memory/2026-05-09.md",
+      "startLine": 144,
+      "endLine": 160,
+      "source": "memory",
+      "snippet": "- **来源：** `sk-644…0fd9/deepseek-reasoner` 模型调用 → 走的是 deepseek 的 anthropic-compatible 端点 `api.deepseek.com/anthropic` - **与上次报错的区别：** - **上次（position 308 错误）**：`api.9cubic.cn/v1` 把多个 JSON 合并进同一条 data 行 → 供应商格式问题 - **这次（空 data）**：`api.deepseek.com/anthropic` 发送了 `event: message_start` 但 `data=` 完全为空 - **根因不同：** 这次是 deepseek 端点的临时不稳定/间歇性问题 ### 状态 - 三条的模型配置已从 `mt/claude-opus-4-6` 切换到 `sk-644…0fd9/deepseek-reasoner` - 旧的 SSE 问题（position 308）不会再出现（因为不再走 api.9cubic.cn） - 新的 SSE 问题（空 data）来自 deepseek 端点，可能间歇性出现 - 建议：监控是否持续复现，若是则考虑更换模型供应商或启用 retry/fallback ### 18:26~18:40 信息修正：配置文件路径 - **大壮的配置文件实际是 `~/.openclaw-OCCoding/openclaw.json`**，不是 `~/.openclaw/openclaw.json` - 两个实例（大壮 和 三条）使用 **同一个 con",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-13T04:55:31.913Z",
+      "lastRecalledAt": "2026-05-13T04:55:31.913Z",
+      "queryHashes": [
+        "8c389099078e"
+      ],
+      "recallDays": [
+        "2026-05-13"
+      ],
+      "conceptTags": [
+        "sk-644",
+        "0fd9/deepseek-reasoner",
+        "anthropic-compatible",
+        "api.deepseek.com/anthropic",
+        "api.9cubic.cn/v1",
+        "message-start",
+        "端点的临时不稳定/间歇性问题",
+        "mt/claude-opus-4-6"
+      ]
+    },
+    "memory:memory/2026-05-11.md:21:32": {
+      "key": "memory:memory/2026-05-11.md:21:32",
+      "path": "memory/2026-05-11.md",
+      "startLine": 21,
+      "endLine": 32,
+      "source": "memory",
+      "snippet": "- 三条是同一台机器上的第一个 OpenClaw 实例 - 差异：三条默认模型较低（MiniMax M2.5），但可以通过切换模型使用高级模型 - 我是第二个实例（大壮），定位编码/运维 - 三条走飞书通道，我也已接入飞书 ## 模型切换操作 - 应 Will 要求，将三条的默认模型从 `minimax/MiniMax-M2.5` 切换为 `mt/claude-opus-4-7` - 三条 gateway 端口为 18789，通过修改 `~/.openclaw/openclaw.json` 中 `model.primary` 完成 - 同时将 `mt/claude-opus-4-7` 的 `models` 配置更新为 `{\"alias\": \"Opus4.7(mt)\"}` - 执行 `openclaw gateway restart -p 18789` 重启生效，验证状态：三条 running - 切换时间：2026-05-11 约 15:03 CST",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-13T04:55:31.913Z",
+      "lastRecalledAt": "2026-05-13T04:55:31.913Z",
+      "queryHashes": [
+        "8c389099078e"
+      ],
+      "recallDays": [
+        "2026-05-13"
+      ],
+      "conceptTags": [
+        "gateway",
+        "m2.5",
+        "定位编码/运维",
+        "minimax/minimax-m2.5",
+        "mt/claude-opus-4-7",
+        "openclaw/openclaw.json",
+        "model.primary",
+        "opus4.7"
+      ]
+    },
+    "memory:memory/2026-03-24.md:4:7": {
+      "key": "memory:memory/2026-03-24.md:4:7",
+      "path": "memory/2026-03-24.md",
+      "startLine": 4,
+      "endLine": 7,
+      "source": "memory",
+      "snippet": "- 对 `pengzushou.cn` 的内容判断：现有站点更像企业宣传站，不是知识库结构；最有价值的知识库源是新闻 27 篇，其次是产品页、品牌故事页、评价页。建议的新知识库主结构为：茶油知识库、产品中心、品牌故事、品牌动态、用户评价、联系我们；其中“新闻”应拆分为 茶油基础知识 / 选购与对比 / 使用指南 / 行业资讯与品牌动态。 - 已在 `/home/w/OCCoding/kb-vitepress` 搭建独立 VitePress 知识库原型，明确决策为：**不改动 `pengzushou.cn` 旧后台，在独立知识库中承接内容**。项目已可本地运行与构建（`npm run docs:dev` / `npm run docs:build`）。 - `kb-vitepress` 当前已完成基础信息架构与首批正式内容迁移，栏目包括：首页、茶油基础知识、选购与对比、使用指南、产品知识、品牌与产地、行业资讯与品牌动态、联系与购买。 - 已将旧站抓取内容批量改写迁入 `kb-vitepress/docs/`，并形成可复用的公开知识库口径：保留规格、场景、购买逻辑、品牌与基地背景；降级或移除高风险的医疗化、强功效、特殊人群承诺。",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-13T04:55:31.913Z",
+      "lastRecalledAt": "2026-05-13T04:55:31.913Z",
+      "queryHashes": [
+        "8c389099078e"
+      ],
+      "recallDays": [
+        "2026-05-13"
+      ],
+      "conceptTags": [
+        "pengzushou.cn",
+        "home/w/occoding/kb-vitepress",
+        "kb-vitepress",
+        "kb-vitepress/docs",
+        "内容",
+        "判断",
+        "现有",
+        "更像"
       ]
     }
   }
