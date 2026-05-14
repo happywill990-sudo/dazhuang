@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-13T04:55:31.913Z",
+  "updatedAt": "2026-05-13T23:42:40.926Z",
   "entries": {
     "memory:memory/2026-05-08.md:1:20": {
       "key": "memory:memory/2026-05-08.md:1:20",
@@ -217,6 +217,161 @@
         "判断",
         "现有",
         "更像"
+      ]
+    },
+    "memory:memory/2026-05-13.md:1:34": {
+      "key": "memory:memory/2026-05-13.md:1:34",
+      "path": "memory/2026-05-13.md",
+      "startLine": 1,
+      "endLine": 34,
+      "source": "memory",
+      "snippet": "# 2026-05-13 会话记忆 ## 销氪搜索执行状态（截至 13:05） - 浏览器持久化进程 PID 2623911，CDP endpoint: ws://127.0.0.1:42401 - **已完成搜索：** - 高级搜索\"山茶油/茶油\"→ 2541 家企业，已提取前 15 家信息 - 标讯搜索\"功能性油脂\"→ 6 条招投标信息，已提取 - **待搜索（5组关键词，标讯+高级搜索）：** - 软胶囊OEM - 保健品原料 - 婴幼儿辅食油 - 营养油 - 保健品代工 - 另需检查 globleCrmSearch 页面\"特医食品\"已有结果 - 搜索脚本：/home/w/OCCoding/xiaoke_search.mjs（使用 Playwright CDP 连接） - 浏览器状态良好，可直接连接执行 ## 三条问题跟进 - 已确认根因：provider mt（9cubic.cn）SSE 流式返回格式异常 - Feishu 缺少 contact:contact 权限（错误码 99991672） - 未采取修复措施，待用户确认方案 # 2026-05-13 会话记忆 ## 销氪搜索执行状态（截至 13:05） - 浏览器持久化进程 PID 2623911，CDP endpoint: ws://127.0.0.1:42401 - **已完成搜索：** - 高级搜索\"山茶油/茶油\"→ 2541 家企业，已提取前 15 家信息 - 标讯搜索\"功能性油脂\"→ 6 条招投标信息，已提取 - **待搜索（5组关键词，标讯+高级搜索）：**",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-13T23:42:40.926Z",
+      "lastRecalledAt": "2026-05-13T23:42:40.926Z",
+      "queryHashes": [
+        "1dcb7a09ef9e"
+      ],
+      "recallDays": [
+        "2026-05-14"
+      ],
+      "conceptTags": [
+        "127.0.0.1",
+        "山茶油/茶油",
+        "9cubic.cn",
+        "会话",
+        "记忆",
+        "搜索",
+        "执行",
+        "状态"
+      ]
+    },
+    "memory:memory/2026-05-12.md:72:97": {
+      "key": "memory:memory/2026-05-12.md:72:97",
+      "path": "memory/2026-05-12.md",
+      "startLine": 72,
+      "endLine": 97,
+      "source": "memory",
+      "snippet": "- 当前策略：用高级搜索搜企业（B端），用标讯搜索搜项目/招标（C端线索） ## 执行计划 v3 ### 阶段 1：提取当前已有结果 - 标讯搜索\"功能性油脂\" 6 条结果 → 截图 + 提取文本 - 高级搜索\"山茶油\" 2541 条第一页 20 家企业 → 截图 + 提取信息 ### 阶段 2：逐组搜新关键词（8组） 每组分别在标讯搜索和高级搜索中执行： 1. 山茶油/茶油 2. 功能性油脂 3. 软胶囊 OEM 4. 特医食品/特殊膳食 5. 保健品原料/食品添加剂 6. 婴幼儿辅食油 7. 植物油/营养油/保健油 8. 保健品代工/OEM贴牌 ### 阶段 3：汇总输出 ## 核心观察 - 标讯搜索页面交互比较简单，输入关键词 + 搜索按钮即可触发 - 高级搜索页需要修改\"主营业务包含任一\"条件中的关键词 - Will 的风格是要求我分小步执行，不要卡住 - Will 提醒注意上下文限制，只做能执行的计划",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-13T23:42:40.926Z",
+      "lastRecalledAt": "2026-05-13T23:42:40.926Z",
+      "queryHashes": [
+        "1dcb7a09ef9e"
+      ],
+      "recallDays": [
+        "2026-05-14"
+      ],
+      "conceptTags": [
+        "用标讯搜索搜项目/招标",
+        "山茶油/茶油",
+        "特医食品/特殊膳食",
+        "保健品原料/食品添加剂",
+        "植物油/营养油/保健油",
+        "保健品代工/oem贴牌",
+        "当前",
+        "策略"
+      ]
+    },
+    "memory:memory/2026-05-13.md:27:50": {
+      "key": "memory:memory/2026-05-13.md:27:50",
+      "path": "memory/2026-05-13.md",
+      "startLine": 27,
+      "endLine": 50,
+      "source": "memory",
+      "snippet": "- 高级搜索\"山茶油/茶油\"→ 2541 家企业，已提取前 15 家信息 - 标讯搜索\"功能性油脂\"→ 6 条招投标信息，已提取 - **待搜索（5组关键词，标讯+高级搜索）：** - 软胶囊OEM - 保健品原料 - 婴幼儿辅食油 - 营养油 - 保健品代工 - 另需检查 globleCrmSearch 页面\"特医食品\"已有结果 - 搜索脚本：/home/w/OCCoding/xiaoke_search.mjs（使用 Playwright CDP 连接） - 浏览器状态良好，可直接连接执行 ## 三条问题跟进 - 已确认根因：provider mt（9cubic.cn）SSE 流式返回格式异常 - Feishu 缺少 contact:contact 权限（错误码 99991672） - 未采取修复措施，待用户确认方案 ## 步骤式提取联系方式（14:00-14:23） - 采用用户确认的\"原子步骤\"模式：每一步（点击→等待→确认→提取）各自独立，用户说步号就执行 - 已提取三家公司联系方式： 1. **浙江老树根油茶开发股份有限公司**（茶油同行）— 13600506597, 19858009916 2. **浙江久源林业科技股份有限公司**（茶油同行）— 18957117988, 13776899557, 18551095881 3. **谢裕大茶叶股份有限公司**（茶企，潜在客户）— 0559-5209188（座机） - 正通过\"领取企业\"方式获取未领公司的联系方式",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-13T23:42:40.926Z",
+      "lastRecalledAt": "2026-05-13T23:42:40.926Z",
+      "queryHashes": [
+        "1dcb7a09ef9e"
+      ],
+      "recallDays": [
+        "2026-05-14"
+      ],
+      "conceptTags": [
+        "山茶油/茶油",
+        "9cubic.cn",
+        "00-14",
+        "0559-5209188",
+        "高级",
+        "搜索",
+        "茶油",
+        "企业"
+      ]
+    },
+    "memory:memory/2026-05-13.md:47:68": {
+      "key": "memory:memory/2026-05-13.md:47:68",
+      "path": "memory/2026-05-13.md",
+      "startLine": 47,
+      "endLine": 68,
+      "source": "memory",
+      "snippet": "1. **浙江老树根油茶开发股份有限公司**（茶油同行）— 13600506597, 19858009916 2. **浙江久源林业科技股份有限公司**（茶油同行）— 18957117988, 13776899557, 18551095881 3. **谢裕大茶叶股份有限公司**（茶企，潜在客户）— 0559-5209188（座机） - 正通过\"领取企业\"方式获取未领公司的联系方式 - 刚完成江西绿源油脂实业有限公司的领取，提取到手机号 13970011049（杜经理/董事） - 每家公司约10个原子步骤：点击公司名→确认面板→领取企业→确认领取成功→再次点击刷新面板→滚到底→提取号码 - 后续计划继续提取宝华农业、金茶王等 # 2026-05-13 会话记忆 ## 销氪搜索执行状态（截至 13:05） - 浏览器持久化进程 PID 2623911，CDP endpoint: ws://127.0.0.1:42401 - **已完成搜索：** - 高级搜索\"山茶油/茶油\"→ 2541 家企业，已提取前 15 家信息 - 标讯搜索\"功能性油脂\"→ 6 条招投标信息，已提取 - **待搜索（5组关键词，标讯+高级搜索）：** - 软胶囊OEM - 保健品原料 - 婴幼儿辅食油 - 营养油 - 保健品代工 - 另需检查 globleCrmSearch 页面\"特医食品\"已有结果 - 搜索脚本：/home/w/OCCoding/xiaoke_search.mjs（使用 Playwright CDP 连接）",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-13T23:42:40.926Z",
+      "lastRecalledAt": "2026-05-13T23:42:40.926Z",
+      "queryHashes": [
+        "1dcb7a09ef9e"
+      ],
+      "recallDays": [
+        "2026-05-14"
+      ],
+      "conceptTags": [
+        "0559-5209188",
+        "杜经理/董事",
+        "127.0.0.1",
+        "山茶油/茶油",
+        "浙江",
+        "树根",
+        "油茶",
+        "开发"
+      ]
+    },
+    "memory:memory/2026-03-24.md:6:9": {
+      "key": "memory:memory/2026-03-24.md:6:9",
+      "path": "memory/2026-03-24.md",
+      "startLine": 6,
+      "endLine": 9,
+      "source": "memory",
+      "snippet": "- `kb-vitepress` 当前已完成基础信息架构与首批正式内容迁移，栏目包括：首页、茶油基础知识、选购与对比、使用指南、产品知识、品牌与产地、行业资讯与品牌动态、联系与购买。 - 已将旧站抓取内容批量改写迁入 `kb-vitepress/docs/`，并形成可复用的公开知识库口径：保留规格、场景、购买逻辑、品牌与基地背景；降级或移除高风险的医疗化、强功效、特殊人群承诺。 - 已完成的代表性页面包括：`guide/what-is-camellia-oil.md`、`buying/how-to-choose-cooking-oil.md`、`buying/camellia-vs-olive.md`、`buying/why-premium-priced.md`、`usage/cooking-guide.md`、`brand/brand-overview.md`、`brand/brand-story.md`、`brand/origin-and-base.md`、`brand/timeline.md`、`brand/partners.md`、`news/industry-development.md`、`news/production-base-observation.md`、`contact/contact-details.md`。 - 产品区已统一整理成模板化结构：`规格` / `适用场景` / `购买前确认项` / `页面说明` / `来源整理自`。已覆盖的产品页包括：冷榨有机原香山茶油、浓香高纯山茶油、黔沅古树山茶油、王宝贝月子宝宝辅食油、生命伴侣鲜果鲜榨口服茶油、生物活",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-13T23:42:40.926Z",
+      "lastRecalledAt": "2026-05-13T23:42:40.926Z",
+      "queryHashes": [
+        "1dcb7a09ef9e"
+      ],
+      "recallDays": [
+        "2026-05-14"
+      ],
+      "conceptTags": [
+        "kb-vitepress",
+        "kb-vitepress/docs",
+        "guide/what-is-camellia-oil.md",
+        "buying/camellia-vs-olive.md",
+        "buying/why-premium-priced.md",
+        "usage/cooking-guide.md",
+        "brand/brand-overview.md",
+        "brand/brand-story.md"
       ]
     }
   }
