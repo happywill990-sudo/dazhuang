@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-13T23:42:40.926Z",
+  "updatedAt": "2026-05-15T02:53:18.843Z",
   "entries": {
     "memory:memory/2026-05-08.md:1:20": {
       "key": "memory:memory/2026-05-08.md:1:20",
@@ -195,18 +195,20 @@
       "endLine": 7,
       "source": "memory",
       "snippet": "- 对 `pengzushou.cn` 的内容判断：现有站点更像企业宣传站，不是知识库结构；最有价值的知识库源是新闻 27 篇，其次是产品页、品牌故事页、评价页。建议的新知识库主结构为：茶油知识库、产品中心、品牌故事、品牌动态、用户评价、联系我们；其中“新闻”应拆分为 茶油基础知识 / 选购与对比 / 使用指南 / 行业资讯与品牌动态。 - 已在 `/home/w/OCCoding/kb-vitepress` 搭建独立 VitePress 知识库原型，明确决策为：**不改动 `pengzushou.cn` 旧后台，在独立知识库中承接内容**。项目已可本地运行与构建（`npm run docs:dev` / `npm run docs:build`）。 - `kb-vitepress` 当前已完成基础信息架构与首批正式内容迁移，栏目包括：首页、茶油基础知识、选购与对比、使用指南、产品知识、品牌与产地、行业资讯与品牌动态、联系与购买。 - 已将旧站抓取内容批量改写迁入 `kb-vitepress/docs/`，并形成可复用的公开知识库口径：保留规格、场景、购买逻辑、品牌与基地背景；降级或移除高风险的医疗化、强功效、特殊人群承诺。",
-      "recallCount": 1,
+      "recallCount": 2,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 1,
+      "totalScore": 2,
       "maxScore": 1,
       "firstRecalledAt": "2026-05-13T04:55:31.913Z",
-      "lastRecalledAt": "2026-05-13T04:55:31.913Z",
+      "lastRecalledAt": "2026-05-15T02:53:18.843Z",
       "queryHashes": [
-        "8c389099078e"
+        "8c389099078e",
+        "207aa6c66297"
       ],
       "recallDays": [
-        "2026-05-13"
+        "2026-05-13",
+        "2026-05-15"
       ],
       "conceptTags": [
         "pengzushou.cn",
@@ -372,6 +374,37 @@
         "usage/cooking-guide.md",
         "brand/brand-overview.md",
         "brand/brand-story.md"
+      ]
+    },
+    "memory:memory/2026-03-24.md:1:4": {
+      "key": "memory:memory/2026-03-24.md:1:4",
+      "path": "memory/2026-03-24.md",
+      "startLine": 1,
+      "endLine": 4,
+      "source": "memory",
+      "snippet": "- 在 workspace `skills/` 下新增 4 个 OpenClaw 版轻量 skills：`gstack-office-hours`、`gstack-plan-eng-review`、`gstack-review`、`gstack-investigate`，并补齐 8 个 references 文件，作为从 Gstack 迁移到 OpenClaw 的最小可用版骨架。 - 已在本机 Lubuntu 环境成功接通 Playwright + Chrome 自动化，能登录 `http://www.pengzushou.cn/admin.php` 后台；自动化脚本位于 `automation/pengzushou/`，包括 `login.js`、`explore.js`、`grab-content-structure.js`、`grab-bodies.js`、`grab-news-all.js`。 - `pengzushou.cn` 后台识别为“广帆互动建站系统”，已成功抓取后台栏目结构、产品列表、新闻列表、评价、留言，以及新闻全量 27 篇正文、产品 7 篇正文、品牌/合作伙伴/联系我们等单页正文。抓取结果保存在 `automation/pengzushou/artifacts/` 下。 - 对 `pengzushou.cn` 的内容判断：现有站点更像企业宣传站，不是知识库结构；最有价值的知识库源是新闻 27 篇，其次是产品页、品牌故事页、评价页。建议的新知识库主结构为：茶油知识库、产品中心、品牌故事、品牌动态、用户评价、联系我们；其中“新闻”应拆分为 茶油基础知识 /",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-15T02:53:18.843Z",
+      "lastRecalledAt": "2026-05-15T02:53:18.843Z",
+      "queryHashes": [
+        "207aa6c66297"
+      ],
+      "recallDays": [
+        "2026-05-15"
+      ],
+      "conceptTags": [
+        "gstack-office-hours",
+        "gstack-plan-eng-review",
+        "gstack-review",
+        "gstack-investigate",
+        "www.pengzushou.cn/admin.php",
+        "automation/pengzushou",
+        "login.js",
+        "explore.js"
       ]
     }
   }
