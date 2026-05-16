@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-15T02:53:18.843Z",
+  "updatedAt": "2026-05-16T03:21:53.160Z",
   "entries": {
     "memory:memory/2026-05-08.md:1:20": {
       "key": "memory:memory/2026-05-08.md:1:20",
@@ -405,6 +405,198 @@
         "automation/pengzushou",
         "login.js",
         "explore.js"
+      ]
+    },
+    "memory:memory/2026-05-14.md:1:30": {
+      "key": "memory:memory/2026-05-14.md:1:30",
+      "path": "memory/2026-05-14.md",
+      "startLine": 1,
+      "endLine": 30,
+      "source": "memory",
+      "snippet": "# 2026-05-14 ## 微信私域销售 - 彭祖寿山茶油 ### 用户需求 Will 要求用系统中已登录的微信账号，开启彭祖寿山茶油的销售工作。微信好友+群成员被视作潜在客户。 ### 环境调查结果 - 微信进程运行中（PID 3495022），WeChatAppEx 框架 - 窗口隐藏/系统托盘模式，xdotool + D-Bus 均无法找到/激活窗口 - 数据目录有 contacts/sessions 数据库但已加密 - D-Bus 有 StatusNotifierItem（托盘图标） - 另一个 OpenClaw 实例（三条）已有 openclaw-weixin 通道配置（ilink token），token 保存于 `/home/w/.claude/channels/wechat/account.json` - workspace 有之前截的微信界面截图（`wx_main.png` 等） ### 提出的方案 - **A**: 在当前实例安装 openclaw-weixin 插件，配置已有 token 实现编程化收发 - **B**: 设计销售话术模板，Will 手动复制发送 - **C**: 尝试 Web 微信（成功率低） ### 知识库铺垫 之前在 `kb-vitepress/` 已搭建彭祖寿山茶油知识库，有内容可复用（科普、选购、产品介绍）。 ### 待用户决策 用户尚未回复倾向的方案。 # 2026-05-14 ## 微信私域销售 - 彭祖寿山茶油 ### 用户需求",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-16T03:21:48.596Z",
+      "lastRecalledAt": "2026-05-16T03:21:53.160Z",
+      "queryHashes": [
+        "2f4b5fb6b9e7",
+        "baeb20980321"
+      ],
+      "recallDays": [
+        "2026-05-16"
+      ],
+      "conceptTags": [
+        "窗口隐藏/系统托盘模式",
+        "d-bus",
+        "均无法找到/激活窗口",
+        "contacts/sessions",
+        "openclaw-weixin",
+        "home/w",
+        "wx-main.png",
+        "kb-vitepress"
+      ]
+    },
+    "memory:memory/2026-05-14.md:21:51": {
+      "key": "memory:memory/2026-05-14.md:21:51",
+      "path": "memory/2026-05-14.md",
+      "startLine": 21,
+      "endLine": 51,
+      "source": "memory",
+      "snippet": "### 知识库铺垫 之前在 `kb-vitepress/` 已搭建彭祖寿山茶油知识库，有内容可复用（科普、选购、产品介绍）。 ### 待用户决策 用户尚未回复倾向的方案。 # 2026-05-14 ## 微信私域销售 - 彭祖寿山茶油 ### 用户需求 Will 要求用系统中已登录的微信账号，开启彭祖寿山茶油的销售工作。微信好友+群成员被视作潜在客户。 ### 环境调查结果 - 微信进程运行中（PID 3495022），WeChatAppEx 框架 - 窗口隐藏/系统托盘模式，xdotool + D-Bus 均无法找到/激活窗口 - 数据目录有 contacts/sessions 数据库但已加密 - D-Bus 有 StatusNotifierItem（托盘图标） - 另一个 OpenClaw 实例（三条）已有 openclaw-weixin 通道配置（ilink token），token 保存于 `/home/w/.claude/channels/wechat/account.json` - workspace 有之前截的微信界面截图（`wx_main.png` 等） ### 提出的方案 - **A**: 在当前实例安装 openclaw-weixin 插件，配置已有 token 实现编程化收发 - **B**: 设计销售话术模板，Will 手动复制发送 - **C**: 尝试 Web 微信（成功率低） ### 知识库铺垫 之前在 `kb-vitepress/` 已搭建彭祖寿山茶油知识库，有内容可复用（科普、选购、产品介绍）。 ### 用户决策 用户选择了方案A",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-16T03:21:48.596Z",
+      "lastRecalledAt": "2026-05-16T03:21:53.160Z",
+      "queryHashes": [
+        "2f4b5fb6b9e7",
+        "baeb20980321"
+      ],
+      "recallDays": [
+        "2026-05-16"
+      ],
+      "conceptTags": [
+        "kb-vitepress",
+        "窗口隐藏/系统托盘模式",
+        "d-bus",
+        "均无法找到/激活窗口",
+        "contacts/sessions",
+        "openclaw-weixin",
+        "home/w",
+        "wx-main.png"
+      ]
+    },
+    "memory:memory/2026-05-14.md:108:135": {
+      "key": "memory:memory/2026-05-14.md:108:135",
+      "path": "memory/2026-05-14.md",
+      "startLine": 108,
+      "endLine": 135,
+      "source": "memory",
+      "snippet": "- 最后用户选择继续走 GUI 自动化路线：激活微信窗口 → 找联系人 → 点开聊天窗口 → 用户手动接管键盘发消息 # 2026-05-14 ## 微信私域销售 - 彭祖寿山茶油 ### 用户需求 Will 要求用系统中已登录的微信账号，开启彭祖寿山茶油的销售工作。微信好友+群成员被视作潜在客户。 ### 环境调查结果 - 微信进程运行中（PID 3495022），WeChatAppEx 框架 - 窗口隐藏/系统托盘模式，xdotool + D-Bus 均无法找到/激活窗口 - 数据目录有 contacts/sessions 数据库但已加密 - D-Bus 有 StatusNotifierItem（托盘图标） - 另一个 OpenClaw 实例（三条）已有 openclaw-weixin 通道配置（ilink token），token 保存于 `/home/w/.claude/channels/wechat/account.json` - workspace 有之前截的微信界面截图（`wx_main.png` 等） ### 提出的方案 - **A**: 在当前实例安装 openclaw-weixin 插件，配置已有 token 实现编程化收发 - **B**: 设计销售话术模板，Will 手动复制发送 - **C**: 尝试 Web 微信（成功率低） ### 知识库铺垫 之前在 `kb-vitepress/` 已搭建彭祖寿山茶油知识库，有内容可复用（科普、选购、产品介绍）。 ### 用户决策 用户选择了方案A。 ### 方案A 待执行步骤（受限，下一轮继续）",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-16T03:21:48.596Z",
+      "lastRecalledAt": "2026-05-16T03:21:53.160Z",
+      "queryHashes": [
+        "2f4b5fb6b9e7",
+        "baeb20980321"
+      ],
+      "recallDays": [
+        "2026-05-16"
+      ],
+      "conceptTags": [
+        "窗口隐藏/系统托盘模式",
+        "d-bus",
+        "均无法找到/激活窗口",
+        "contacts/sessions",
+        "openclaw-weixin",
+        "home/w",
+        "wx-main.png",
+        "kb-vitepress"
+      ]
+    },
+    "memory:memory/2026-05-15.md:1:31": {
+      "key": "memory:memory/2026-05-15.md:1:31",
+      "path": "memory/2026-05-15.md",
+      "startLine": 1,
+      "endLine": 31,
+      "source": "memory",
+      "snippet": "# 2026-05-15 Memory ## 内存持久化 (Pre-compaction flush) ### 活跃会话 - 通过飞书与 Will 对话中 - 当前请求：打开微信联系人\"银杏村\"的聊天对话框并截图 - 已通过 Playwright 脚本启动微信 Web 版（http://localhost:3000/?default_app=wechat） - 已登录微信网页版并截取当前界面 ### 关键状态 - WeChat Web 版通过自建 webapp（/home/w/OCCoding/wechat-webapp）运行在 localhost:3000 - 用户发的是微信聊天界面截图的请求 - 微信网页版已打开，需要导航到\"银杏村\"的聊天 ### 等待后续操作 - 尝试通过 Playwright 在微信网页版中搜索联系人\"银杏村\" - 如无法自动操作，需人工指导 ## Turn 2 — 用户问\"能打开微信吗？\" ### 用户消息 \"能打开微信吗？\" — 用户想让我打开微信，并继续之前\"打开银杏村对话框截图\"的请求。 ### 当前状态 - 会话为 memory flush turn（仅能追加 memory/2026-05-15.md，无法 exec/交互） - 微信 Linux 桌面版在前一回合中存在（PID 3940646, 3940720），当前是否还运行未知 - wechat-webapp 目录（/home/w/OCCoding/wechat-webapp）不存在（可能因 compaction 丢失） - Playwright 和 Chrome 可用（参",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-16T03:21:48.596Z",
+      "lastRecalledAt": "2026-05-16T03:21:53.160Z",
+      "queryHashes": [
+        "2f4b5fb6b9e7",
+        "baeb20980321"
+      ],
+      "recallDays": [
+        "2026-05-16"
+      ],
+      "conceptTags": [
+        "pre-compaction",
+        "default-app",
+        "home/w/occoding/wechat-webapp",
+        "memory/2026-05-15.md",
+        "exec/交互",
+        "wechat-webapp",
+        "内存",
+        "持久"
+      ]
+    },
+    "memory:memory/2026-05-15.md:27:53": {
+      "key": "memory:memory/2026-05-15.md:27:53",
+      "path": "memory/2026-05-15.md",
+      "startLine": 27,
+      "endLine": 53,
+      "source": "memory",
+      "snippet": "- 微信 Linux 桌面版在前一回合中存在（PID 3940646, 3940720），当前是否还运行未知 - wechat-webapp 目录（/home/w/OCCoding/wechat-webapp）不存在（可能因 compaction 丢失） - Playwright 和 Chrome 可用（参考 automation/pengzushou/ 中的 login.js） - 没有 exec/read 沙箱外文件的能力，无法确认当前进程状态 ### 待回复要点（下次非 flush 回合时） 1. 需要检查微信桌面版进程是否还在运行 2. 如果不在，要么重启微信桌面版（仍在文件传输模式有问题），要么重启网页版方案 3. 网页版方案：用 Playwright 启动浏览器打开 wx.qq.com，但需要用户扫码登录 4. 桌面版方案：尝试 xdotool 操作（之前无效）或寻找其他自动化方式（DBus、RadiumWMPF IPC） 5. \"银杏村\"联系人——需要先打开微信聊天列表/搜索找到它 ## Turn 3 — 用户选择方案 A ### 用户选择 选择了方案 A：重新启动微信桌面版。 ### 限制 当前仍处于 memory flush turn，只能读文件/追加 memory，无法 exec 或写入脚本。用户等待执行。 ### 待办 下次非 flush 回合时需要执行 Plan A： 1. 检查 WeChat 桌面进程是否在跑 2. 如果不在，启动 `/usr/bin/wechat` 3. 截图查看状态（可能需要用户扫码登录） 4. 找到\"银杏村\"对话框并截图",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-16T03:21:48.596Z",
+      "lastRecalledAt": "2026-05-16T03:21:53.160Z",
+      "queryHashes": [
+        "2f4b5fb6b9e7",
+        "baeb20980321"
+      ],
+      "recallDays": [
+        "2026-05-16"
+      ],
+      "conceptTags": [
+        "wechat-webapp",
+        "home/w/occoding/wechat-webapp",
+        "automation/pengzushou",
+        "login.js",
+        "exec/read",
+        "wx.qq.com",
+        "需要先打开微信聊天列表/搜索找到它",
+        "只能读文件/追加"
+      ]
+    },
+    "memory:memory/2026-05-14.md:43:73": {
+      "key": "memory:memory/2026-05-14.md:43:73",
+      "path": "memory/2026-05-14.md",
+      "startLine": 43,
+      "endLine": 73,
+      "source": "memory",
+      "snippet": "- **B**: 设计销售话术模板，Will 手动复制发送 - **C**: 尝试 Web 微信（成功率低） ### 知识库铺垫 之前在 `kb-vitepress/` 已搭建彭祖寿山茶油知识库，有内容可复用（科普、选购、产品介绍）。 ### 用户决策 用户选择了方案A。 ### 方案A 待执行步骤（受限，下一轮继续） 1. 读取另一实例 token 文件: `/home/w/.claude/channels/wechat/account.json` 2. 将 token 写入本实例插件状态目录: `/home/w/.openclaw/openclaw-weixin/accounts/35a691b7aa6a@im.bot.json` 3. 注册 account index: `/home/w/.openclaw/openclaw-weixin/accounts.json` 4. 编辑 openclaw.json 添加 openclaw-weixin 通道段 5. 重启 Gateway 加载插件 ### pending - 需要完整 token（摘要中仅看到截断版 \"35a691…acf2\"） - 需要 openclaw.json 当前内容以合并配置 # 2026-05-14 ## 微信私域销售 - 彭祖寿山茶油 ### 用户需求 Will 要求用系统中已登录的微信账号，开启彭祖寿山茶油的销售工作。微信好友+群成员被视作潜在客户。 ### 环境调查结果 - 微信进程运行中（PID 3495022），WeChatAppEx 框架 - 窗口隐藏/系统托盘模式，xdot",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-16T03:21:48.596Z",
+      "lastRecalledAt": "2026-05-16T03:21:53.160Z",
+      "queryHashes": [
+        "2f4b5fb6b9e7",
+        "baeb20980321"
+      ],
+      "recallDays": [
+        "2026-05-16"
+      ],
+      "conceptTags": [
+        "gateway",
+        "kb-vitepress",
+        "home/w",
+        "im.bot.json",
+        "openclaw.json",
+        "openclaw-weixin",
+        "窗口隐藏/系统托盘模式",
+        "设计"
       ]
     }
   }
