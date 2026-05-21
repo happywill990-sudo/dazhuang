@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-16T03:21:53.160Z",
+  "updatedAt": "2026-05-21T08:33:17.692Z",
   "entries": {
     "memory:memory/2026-05-08.md:1:20": {
       "key": "memory:memory/2026-05-08.md:1:20",
@@ -510,19 +510,21 @@
       "endLine": 31,
       "source": "memory",
       "snippet": "# 2026-05-15 Memory ## 内存持久化 (Pre-compaction flush) ### 活跃会话 - 通过飞书与 Will 对话中 - 当前请求：打开微信联系人\"银杏村\"的聊天对话框并截图 - 已通过 Playwright 脚本启动微信 Web 版（http://localhost:3000/?default_app=wechat） - 已登录微信网页版并截取当前界面 ### 关键状态 - WeChat Web 版通过自建 webapp（/home/w/OCCoding/wechat-webapp）运行在 localhost:3000 - 用户发的是微信聊天界面截图的请求 - 微信网页版已打开，需要导航到\"银杏村\"的聊天 ### 等待后续操作 - 尝试通过 Playwright 在微信网页版中搜索联系人\"银杏村\" - 如无法自动操作，需人工指导 ## Turn 2 — 用户问\"能打开微信吗？\" ### 用户消息 \"能打开微信吗？\" — 用户想让我打开微信，并继续之前\"打开银杏村对话框截图\"的请求。 ### 当前状态 - 会话为 memory flush turn（仅能追加 memory/2026-05-15.md，无法 exec/交互） - 微信 Linux 桌面版在前一回合中存在（PID 3940646, 3940720），当前是否还运行未知 - wechat-webapp 目录（/home/w/OCCoding/wechat-webapp）不存在（可能因 compaction 丢失） - Playwright 和 Chrome 可用（参",
-      "recallCount": 2,
+      "recallCount": 3,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 2,
+      "totalScore": 3,
       "maxScore": 1,
       "firstRecalledAt": "2026-05-16T03:21:48.596Z",
-      "lastRecalledAt": "2026-05-16T03:21:53.160Z",
+      "lastRecalledAt": "2026-05-21T08:33:17.692Z",
       "queryHashes": [
         "2f4b5fb6b9e7",
-        "baeb20980321"
+        "baeb20980321",
+        "8aa352b46c28"
       ],
       "recallDays": [
-        "2026-05-16"
+        "2026-05-16",
+        "2026-05-21"
       ],
       "conceptTags": [
         "pre-compaction",
